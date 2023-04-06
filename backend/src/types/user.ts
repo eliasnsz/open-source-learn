@@ -20,5 +20,5 @@ export interface LessonProps {
   video_url: string
   course: CourseProps
   courseId: string
-  approved: boolean
+  isChecked: boolean
 }

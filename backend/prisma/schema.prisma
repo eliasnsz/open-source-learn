@@ -30,5 +30,5 @@ model Lesson {
   video_url           String
   course              Course  @relation(fields: [courseId], references: [id])
   courseId            String  @db.ObjectId
-  approved            Boolean
+  isChecked           Boolean @default(false)
 }

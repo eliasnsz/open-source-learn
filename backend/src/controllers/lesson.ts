@@ -92,6 +92,13 @@ const lessonController = {
     return res.status(204).end();
   },
 
+  changeLessonCheck: async(req: Request, res: Response) => {
+    const { lessonId } = req.params;
+    await lessonModel.changeLessonCheck(lessonId);
+
+    return res.status(204).end();
+  },
+
 };
 
 export default lessonController;

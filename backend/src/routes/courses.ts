@@ -14,6 +14,8 @@ route.get("/:courseId/lessons/:lessonId", sessionMiddlewares.jwtVerify, lessonCo
 route.post("/", sessionMiddlewares.jwtVerify, courseController.create); 
 route.post("/:courseId/lessons", sessionMiddlewares.jwtVerify, lessonController.create);
 
+route.put("/:courseId/lessons/:lessonId", sessionMiddlewares.jwtVerify, lessonController.changeLessonCheck  );
+
 route.delete("/:courseId", sessionMiddlewares.jwtVerify, courseController.delete);
 route.delete("/:courseId/lessons/:lessonId", sessionMiddlewares.jwtVerify, lessonController.delete);
 

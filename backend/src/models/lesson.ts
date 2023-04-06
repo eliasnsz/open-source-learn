@@ -11,7 +11,6 @@ const lessonModel = {
         duration_in_seconds, 
         video_url, 
         courseId,
-        approved: false,  
       }
     });
     
@@ -45,6 +44,22 @@ const lessonModel = {
     });
     return;
   },
+
+  changeLessonCheck: async (lessonId: string) => {
+    try {
+      const findedLesson = await prisma.lesson.findFirst({
+        where: { id: lessonId },
+      });
+      
+      await prisma.lesson.update({
+        where: { id: findedLesson?.id },
+        data: { isChecked: !findedLesson?.isChecked }
+      });
+
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
 };
 

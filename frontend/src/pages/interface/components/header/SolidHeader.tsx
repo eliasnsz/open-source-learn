@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
-import { Avatar, Box, Flex } from "@chakra-ui/react";
+import { Avatar, Box, Flex, Image } from "@chakra-ui/react";
 import { AiOutlineUser } from "react-icons/ai";
 
 import Divider from "../utils/Divider";
 import Menu from "./Menu";
+import Link from "next/link";
 
 export default function SolidHeader() {
 
@@ -11,9 +12,7 @@ export default function SolidHeader() {
     <>
       <Box 
         h="80px" 
-        w="100%"
-        pos="fixed"
-        bgColor="#490901"
+        bgColor="dark.100"
         boxShadow="0px 5px 12px #00000044"
       >
         <Flex 
@@ -22,7 +21,10 @@ export default function SolidHeader() {
           align="center" 
           justify="space-between" 
         >
-          <Box color="#fff" fontSize="xl">Logo</Box>
+          <Link href="/dashboard">
+            <Image h="50px" src="../../../logo/logo-no-background.png" alt="logo"/>
+          </Link>
+        
           <Menu />
         </Flex>
         <Divider/>

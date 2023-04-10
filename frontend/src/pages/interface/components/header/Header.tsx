@@ -4,6 +4,8 @@ import { AiOutlineUser } from "react-icons/ai";
 
 import Divider from "../utils/Divider";
 import Menu from "./Menu";
+import Link from "next/link";
+import useAuth, { User } from "@/contexts/AuthContext";
 
 export default function Header() {
 
@@ -42,7 +44,10 @@ export default function Header() {
         align="center" 
         justify="space-between" 
       >
-        <Image h="50px" src="logo/logo.png" alt="logo"/>
+        <Link href="/dashboard">
+          <Image h="50px" src="../logo/logo-no-background.png" alt="logo"/>
+        </Link>
+        
         <Menu />
       </Flex>
       {

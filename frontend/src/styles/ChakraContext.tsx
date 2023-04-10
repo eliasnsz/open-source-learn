@@ -10,9 +10,23 @@ interface Props {
 const theme = extendTheme({
   styles: {
     global: {
+      'html::-webkit-scrollbar': {
+        width: "8px"
+      },
+      'html::-webkit-scrollbar-track': {
+        background: '#141414',
+      },
+      'html::-webkit-scrollbar-thumb': {
+        backgroundColor: "#bf00ff77",
+        borderRadius: "20px",
+      },
       'body': {
         overflowX: "hidden",
-        fontFamily: "Roboto, sans-serif"
+        fontFamily: "Roboto, sans-serif",
+      },
+      '*::selection': {
+          color: "#e5e5e5",
+          backgroundColor: "#bf00ff"
       }
     },
   },

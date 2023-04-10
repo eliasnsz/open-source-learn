@@ -12,4 +12,5 @@ export interface Lesson {
   duration_in_seconds: number
   video_url: string
   courseId: string
+  isChecked: boolean
 }

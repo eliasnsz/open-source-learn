@@ -22,6 +22,7 @@ export interface User {
   id: string;
   name: string;
   email: string;
+  isAdmin: boolean
   created_at: string;
 }
 
@@ -51,8 +52,8 @@ export function AuthProvider({ children }: Props) {
   async function register({ name, email, password }: AuthData) {
     try {
       await api.post("/users/register", { name, email, password });
-      signIn({ name, email, password }) 
-      recoveryUserInformation()
+      await signIn({ name, email, password }) 
+      await recoveryUserInformation()
       return { error: null };
 
     } catch (error: any) {
